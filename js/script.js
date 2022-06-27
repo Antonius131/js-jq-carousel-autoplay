@@ -42,15 +42,27 @@ imgTagList[activeImg].classList.add('active');
 
 const nextBtn = document.getElementById('next-btn');
 
-nextBtn.addEventListener ('click', function() {
-   imgTagList[activeImg].classList.remove('active');
+// nextBtn.addEventListener ('click', function() {
+//    imgTagList[activeImg].classList.remove('active');
 
+//    activeImg++;
+
+//    if (activeImg === imgTagList.length) {
+//       activeImg = 0;
+//    }
+   
+//    imgTagList[activeImg].classList.add('active');
+   
+// });
+
+const autoplay = setInterval (function(){
+   imgTagList[activeImg].classList.remove('active');
    activeImg++;
 
    if (activeImg === imgTagList.length) {
       activeImg = 0;
    }
-   
+
    imgTagList[activeImg].classList.add('active');
-   
-});
+
+}, 3000);
